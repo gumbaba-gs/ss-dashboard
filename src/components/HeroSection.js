@@ -4,6 +4,7 @@ const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {
+    // Set visible after component mount to trigger animations
     setIsVisible(true);
   }, []);
   
@@ -51,16 +52,13 @@ const HeroSection = () => {
   ];
   
   return (
-    <section id="home" className="gradient-bg relative min-h-screen flex items-center overflow-hidden">
-      {/* Background particles for futuristic feel */}
-      <div className="particles-bg"></div>
-      
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{background: 'linear-gradient(to right, #3B82F6, #ffffff)'}}>
       {/* Content container */}
       <div className="container-padding relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 
-              className={`heading text-4xl md:text-5xl lg:text-6xl text-blue-900 font-extrabold mb-6 ${
+              className={`text-4xl md:text-5xl lg:text-6xl text-blue-900 font-extrabold mb-6 ${
                 isVisible ? 'slide-in-left' : 'opacity-0'
               }`}
             >
@@ -68,7 +66,7 @@ const HeroSection = () => {
             </h1>
             
             <p 
-              className={`paragraph text-lg md:text-xl mb-8 ${
+              className={`text-lg md:text-xl mb-8 ${
                 isVisible ? 'fade-in' : 'opacity-0'
               }`}
               style={{ animationDelay: '0.3s' }}
@@ -77,7 +75,7 @@ const HeroSection = () => {
             </p>
             
             <button 
-              className={`btn-primary ${isVisible ? 'slide-in-top' : 'opacity-0'}`}
+              className={`px-6 py-3 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg transition-all duration-300 ${isVisible ? 'slide-in-top' : 'opacity-0'}`}
               style={{ animationDelay: '1.2s' }}
             >
               Discover Our Solutions

@@ -23,16 +23,22 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-      },
     },
   },
   plugins: [],
+  safelist: [
+    'container-padding',
+    'gradient-bg',
+    'heading',
+    'subheading',
+    'paragraph',
+    'btn',
+    'btn-primary',
+    'fade-in',
+    'slide-in-left',
+    'slide-in-right',
+    'slide-in-top',
+    'particles-bg',
+    'particle'
+  ]
 }
