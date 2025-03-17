@@ -72,25 +72,28 @@ function App() {
   return (
     <div className="App relative">
       <ParticleBackground />
-      <Navbar />
-      <HeroSection />
-      <InventorySection />
-      <Section 
-        id="about"
-        title="About Spanex Sciences"
-        content="We are a pioneering scientific company dedicated to enhancing preservation, sustainability, and human health through innovative solutions."
-      />
-      <Section 
-        id="products"
-        title="Our Products"
-        content="Discover our range of cutting-edge formulations across four innovative categories."
-      />
-      <Section 
-        id="contact"
-        title="Contact Us"
-        content="Get in touch with our team to learn more about our solutions."
-      />
-      <Footer />
+      {/* Wrap all content in a div with higher z-index to ensure it's above the particles */}
+      <div className="relative z-10">
+        <Navbar />
+        <HeroSection />
+        <InventorySection />
+        <Section
+          id="about"
+          title="About Spanex Sciences"
+          content="We are a pioneering scientific company dedicated to enhancing preservation, sustainability, and human health through innovative solutions."
+        />
+        <Section
+          id="products"
+          title="Our Products"
+          content="Discover our range of cutting-edge formulations across four innovative categories."
+        />
+        <Section
+          id="contact"
+          title="Contact Us"
+          content="Get in touch with our team to learn more about our solutions."
+        />
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -1,24 +1,31 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 
 const InventorySection = () => {
   const [activeCategory, setActiveCategory] = useState('berries');
   const [expandedItems, setExpandedItems] = useState({});
 
-  // Fix to ensure toggle works properly
-  const toggleExpand = (itemId, e) => {
-    // Prevent event bubbling
-    e.stopPropagation();
+  // Improved toggle function with useCallback for better performance
+  const toggleExpand = useCallback((itemId, e) => {
+    if (e) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
     
-    setExpandedItems(prev => ({
-      ...prev,
-      [itemId]: !prev[itemId]
-    }));
-  };
+    console.log('Toggling item:', itemId);
+    
+    setExpandedItems(prevState => {
+      const newState = { ...prevState };
+      newState[itemId] = !newState[itemId];
+      return newState;
+    });
+  }, []);
 
-  // Handle category change
-  const handleCategoryChange = (categoryId) => {
+  // Handle category change with useCallback
+  const handleCategoryChange = useCallback((categoryId) => {
     setActiveCategory(categoryId);
-  };
+    // Reset expanded items when changing categories
+    setExpandedItems({});
+  }, []);
 
   const inventoryData = {
     berries: {
@@ -358,11 +365,11 @@ const InventorySection = () => {
   };
 
   const activeData = inventoryData[activeCategory];
-  const stats = calculateInventoryStats;
+  const stats = calculateInventoryStats; // This is already the calculated value from useMemo
 
   return (
-    <section id="inventory" className="py-16 gradient-bg">
-      <div className="container-padding">
+    <section id="inventory" className="py-16 gradient-bg relative z-10">
+      <div className="container-padding relative">
         <h2 className="heading text-center">Formulations Inventory</h2>
         <p className="paragraph max-w-3xl mx-auto text-center mb-8">
           Track the status of our innovative formulations across different categories, from development to regulatory clearance.
@@ -391,13 +398,13 @@ const InventorySection = () => {
           </div>
         </div>
 
-        {/* Category Navigation - Fixed onClick handler */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+        {/* Category Navigation - Enhanced for better interaction */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10 relative z-20" role="tablist" style={{ pointerEvents: 'auto' }}>
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => handleCategoryChange(category.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition duration-200 ${
+              className={`px-4 py-2 rounded-full text-sm font-medium transition duration-200 relative z-20 ${
                 activeCategory === category.id
                   ? 'bg-blue-600 text-white shadow-md'
                   : 'bg-white text-blue-800 border border-blue-200 hover:bg-blue-50'
@@ -405,14 +412,23 @@ const InventorySection = () => {
               tabIndex={0}
               role="tab"
               aria-selected={activeCategory === category.id}
+              aria-controls={`${category.id}-panel`}
+              id={`${category.id}-tab`}
+              type="button"
+              style={{ pointerEvents: 'auto' }}
             >
               {category.label}
             </button>
           ))}
         </div>
 
-        {/* Category Content - Fixed click handlers */}
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-blue-100">
+        {/* Category Content - Enhanced with proper ARIA attributes */}
+        <div
+          className="bg-white rounded-xl shadow-lg overflow-hidden border border-blue-100"
+          role="tabpanel"
+          id={`${activeCategory}-panel`}
+          aria-labelledby={`${activeCategory}-tab`}
+        >
           <div className="p-6 bg-gradient-to-r from-blue-50 to-white border-b border-blue-100">
             <div className="flex items-center gap-4">
               <div className="rounded-full bg-white p-3 shadow-md">
@@ -426,34 +442,56 @@ const InventorySection = () => {
           </div>
 
           <div className="divide-y divide-gray-100">
-            {activeData.items.map((item) => (
-              <div key={item.id} className="p-6 hover:bg-gray-50 transition duration-150">
-                <div className="flex justify-between items-center">
-                  <h4 className="font-semibold text-lg text-blue-800">{item.title}</h4>
-                  <button 
-                    className="text-blue-500 hover:text-blue-700 p-2"
-                    onClick={(e) => toggleExpand(item.id, e)}
-                    aria-expanded={expandedItems[item.id]}
-                    aria-controls={`${item.id}-content`}
+            {activeData.items.map((item) => {
+              const isExpanded = !!expandedItems[item.id];
+              
+              return (
+                <div
+                  key={item.id}
+                  className="p-6 hover:bg-gray-50 transition duration-150 relative z-10"
+                  style={{ pointerEvents: 'auto' }}
+                >
+                  <div
+                    className="flex justify-between items-center cursor-pointer relative z-10"
+                    onClick={(e) => {
+                      if (!e.target.closest('button')) {
+                        toggleExpand(item.id, e);
+                      }
+                    }}
+                    style={{ pointerEvents: 'auto' }}
                   >
-                    <svg 
-                      className={`w-5 h-5 transition-transform duration-200 ${expandedItems[item.id] ? 'transform rotate-180' : ''}`}
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24" 
-                      xmlns="http://www.w3.org/2000/svg"
+                    <h4 className="font-semibold text-lg text-blue-800">{item.title}</h4>
+                    <button
+                      className="text-blue-500 hover:text-blue-700 p-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-full relative z-20"
+                      onClick={(e) => toggleExpand(item.id, e)}
+                      aria-expanded={isExpanded}
+                      aria-controls={`${item.id}-content`}
+                      type="button"
+                      style={{ pointerEvents: 'auto' }}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                </div>
-                
-                {item.description && (
-                  <p className="text-gray-600 mt-1">{item.description}</p>
-                )}
-                
-                {expandedItems[item.id] && (
-                  <div id={`${item.id}-content`} className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <svg
+                        className={`w-5 h-5 transition-transform duration-200 ${isExpanded ? 'transform rotate-180' : ''}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                  
+                  {item.description && (
+                    <p className="text-gray-600 mt-1">{item.description}</p>
+                  )}
+                  
+                  {/* Always render the content but control visibility with CSS */}
+                  <div
+                    id={`${item.id}-content`}
+                    className={`mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 transition-all duration-300 ease-in-out ${
+                      isExpanded ? 'max-h-96 opacity-100 visible' : 'max-h-0 opacity-0 invisible overflow-hidden'
+                    }`}
+                  >
                     {item.status.map((status, idx) => (
                       <div key={idx} className="flex items-center gap-2">
                         <StatusIcon complete={status.complete} inProgress={status.inProgress} />
@@ -464,9 +502,9 @@ const InventorySection = () => {
                       </div>
                     ))}
                   </div>
-                )}
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
