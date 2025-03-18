@@ -280,6 +280,35 @@ const InventorySection = () => {
           ]
         }
       ]
+    },
+    superFood: {
+      title: "Super Food™",
+      subtitle: "Enhanced nutrition solutions",
+      icon: (
+        <svg className="w-8 h-8 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12l-8 8-8-8m16-8l-8 8-8-8" />
+        </svg>
+      ),
+      items: [
+        { 
+          id: "super-food-lifestyle", 
+          title: "Lifestyle-Specific Foods",
+          description: "Traveler's Fuel™ and StressBuster Bars™",
+          status: [
+            { label: "Formulation Procured", complete: true },
+            { label: "Lab Tested", complete: false }
+          ]
+        },
+        { 
+          id: "super-food-disaster", 
+          title: "Disaster Management Food",
+          description: "Protein Chocolate Surge™ - A high-energy protein chocolate designed to keep a person energized for 2-3 days during emergencies",
+          status: [
+            { label: "Formulation Procured", complete: true },
+            { label: "Lab Tested", complete: true }
+          ]
+        }
+      ]
     }
   };
 
@@ -339,7 +368,8 @@ const InventorySection = () => {
     { id: 'vegetables', label: 'Vegetables' },
     { id: 'inProgress', label: 'In Development' },
     { id: 'produceWash', label: 'Produce Wash' },
-    { id: 'superWater', label: 'Super Water™' }
+    { id: 'superWater', label: 'Super Water™' },
+    { id: 'superFood', label: 'Super Food™' }
   ];
 
   const StatusIcon = ({ complete, inProgress }) => {

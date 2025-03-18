@@ -8,6 +8,8 @@ import ProduceWashOpportunity from './components/ProduceWashOpportunity';
 import SuperWaterIndiaOpportunity from './components/SuperWaterIndiaOpportunity';
 import ProductValidation from './components/ProductValidation';
 import BerryMarketOpportunity from './components/BerryMarketOpportunity';
+import ScaleUpRoadmap from './components/ScaleUpRoadmap';
+import BusinessModelFinancialStrategy from './components/BusinessModelFinancialStrategy';
 import Section from './components/Section';
 import Footer from './components/Footer';
 
@@ -79,29 +81,16 @@ function App() {
       <ParticleBackground />
       {/* Wrap all content in a div with higher z-index to ensure it's above the particles */}
       <div className="relative z-10">
-        <Navbar />
+        {/* <Navbar /> */}
         <HeroSection />
         <InventorySection />
         <MarketOpportunityDashboard/>
         <ProduceWashOpportunity/>
         <SuperWaterIndiaOpportunity/>
         <ProductValidation/>
-        {/* <BerryMarketOpportunity/> */}
-        <Section
-          id="about"
-          title="About Spanex Sciences"
-          content="We are a pioneering scientific company dedicated to enhancing preservation, sustainability, and human health through innovative solutions."
-        />
-        <Section
-          id="products"
-          title="Our Products"
-          content="Discover our range of cutting-edge formulations across four innovative categories."
-        />
-        <Section
-          id="contact"
-          title="Contact Us"
-          content="Get in touch with our team to learn more about our solutions."
-        />
+        <BerryMarketOpportunity/>
+        <ScaleUpRoadmap/>
+        <BusinessModelFinancialStrategy/>
         <Footer />
       </div>
     </div>

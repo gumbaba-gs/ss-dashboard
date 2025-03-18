@@ -63,6 +63,16 @@ html {
   animation: slideInTop 1s ease-in-out;
 }
 
+/* Animation for BusinessModelFinancialStrategy component */
+.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.business-model-content {
+  transform: translateY(20px);
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }

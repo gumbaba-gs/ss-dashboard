@@ -80,12 +80,17 @@ const BerryMarketOpportunity = () => {
     { id: 'strategy', label: 'Market Strategy', icon: '🚀' }
   ];
 
-  // Expandable card component
+  // Expandable card component with improved interaction
   const ExpandableCard = ({ id, title, children }) => (
-    <div className="bg-white rounded-lg shadow overflow-hidden mb-4">
-      <div 
-        className="p-4 flex justify-between items-center cursor-pointer bg-gradient-to-r from-blue-50 to-white"
-        onClick={() => toggleCard(id)}
+    <div className="bg-white rounded-lg shadow overflow-hidden mb-4 relative z-10">
+      <div
+        className="p-4 flex justify-between items-center cursor-pointer bg-gradient-to-r from-blue-50 to-white relative z-20"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleCard(id);
+        }}
+        style={{ pointerEvents: 'auto' }}
       >
         <h3 className="font-semibold text-lg text-blue-800">{title}</h3>
         <svg
@@ -98,7 +103,7 @@ const BerryMarketOpportunity = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </div>
-      <div 
+      <div
         className={`transition-all duration-300 ${
           expandedCard === id ? 'max-h-screen opacity-100 p-4' : 'max-h-0 opacity-0 overflow-hidden'
         }`}
@@ -184,7 +189,7 @@ const BerryMarketOpportunity = () => {
 
   return (
     <section className="relative py-16 gradient-bg">
-      <div className="container-padding relative z-10">
+      <div className="container-padding relative z-10" style={{ pointerEvents: 'auto' }}>
         <h2 className="heading text-center">
           Berry Market Opportunity
         </h2>
@@ -192,17 +197,23 @@ const BerryMarketOpportunity = () => {
           Detailed analysis of the significant market opportunity for our 5x shelf life extension technology in the global berry industry.
         </p>
 
-        {/* Tab Navigation */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
+        {/* Tab Navigation - Enhanced for better interaction */}
+        <div className="flex flex-wrap justify-center gap-2 mb-8 relative z-20" style={{ pointerEvents: 'auto' }}>
           {tabOptions.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-3 rounded-full flex items-center transition duration-300 ${
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setActiveTab(tab.id);
+              }}
+              className={`px-4 py-3 rounded-full flex items-center transition duration-300 relative z-20 ${
                 activeTab === tab.id
                   ? 'bg-blue-600 text-white shadow-md'
                   : 'bg-white text-blue-800 hover:bg-blue-50'
               }`}
+              style={{ pointerEvents: 'auto' }}
+              type="button"
             >
               <span className="mr-2">{tab.icon}</span>
               <span>{tab.label}</span>
@@ -210,10 +221,10 @@ const BerryMarketOpportunity = () => {
           ))}
         </div>
 
-        {/* Content Container */}
-        <div className="bg-white bg-opacity-90 rounded-xl shadow-lg overflow-hidden mb-8">
+        {/* Content Container with improved interaction */}
+        <div className="bg-white bg-opacity-90 rounded-xl shadow-lg overflow-hidden mb-8 relative z-10" style={{ pointerEvents: 'auto' }}>
           {/* Current Tab Header */}
-          <div className="p-6 bg-gradient-to-r from-blue-50 to-white border-b border-blue-100">
+          <div className="p-6 bg-gradient-to-r from-blue-50 to-white border-b border-blue-100 relative z-10">
             <h3 className="subheading">
               {activeTab === 'overview' && "Berry Market Overview"}
               {activeTab === 'countries' && "Target Country Analysis"}
@@ -398,10 +409,10 @@ const BerryMarketOpportunity = () => {
           </div>
         </div>
 
-        {/* Background Particles */}
-        <div className="particles-bg">
+        {/* Background Particles with improved z-index */}
+        <div className="particles-bg" style={{ zIndex: -1, pointerEvents: 'none' }}>
           {[...Array(12)].map((_, i) => (
-            <div 
+            <div
               key={i}
               className="particle"
               style={{
@@ -409,7 +420,8 @@ const BerryMarketOpportunity = () => {
                 height: `${Math.random() * 100 + 50}px`,
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`
+                animationDelay: `${Math.random() * 5}s`,
+                pointerEvents: 'none'
               }}
             />
           ))}
