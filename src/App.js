@@ -6,6 +6,7 @@ import InventorySection from './components/InventorySection';
 import MarketOpportunityDashboard from './components/MarketOpportunityDashboard';
 import ProduceWashOpportunity from './components/ProduceWashOpportunity';
 import SuperWaterIndiaOpportunity from './components/SuperWaterIndiaOpportunity';
+import SuperFoodIndiaOpportunity from './components/SuperFoodIndiaOpportunity';
 import ProductValidation from './components/ProductValidation';
 import BerryMarketOpportunity from './components/BerryMarketOpportunity';
 import ScaleUpRoadmap from './components/ScaleUpRoadmap';
@@ -87,8 +88,9 @@ function App() {
         <MarketOpportunityDashboard/>
         <ProduceWashOpportunity/>
         <SuperWaterIndiaOpportunity/>
+        <SuperFoodIndiaOpportunity/>
         <ProductValidation/>
-        <BerryMarketOpportunity/>
+        {/* <BerryMarketOpportunity/> */}
         <ScaleUpRoadmap/>
         <BusinessModelFinancialStrategy/>
         <Footer />

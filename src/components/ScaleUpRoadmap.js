@@ -24,9 +24,10 @@ const ScaleUpRoadmap = () => {
       title: 'Phase 1 (Next 3 Months)',
       description: 'Initial market entry and regulatory approvals',
       steps: [
-        'Launch blueberry liquid formulations in North American market',
+        'Open initial R&D labs in India',
+        'Establish initial production capabilities',
         'Complete regulatory approvals for initial markets',
-        'Establish initial production capabilities'
+        'Launch blueberry liquid formulations in North American market'
       ],
       color: 'bg-blue-600',
       icon: '🚀'
@@ -36,7 +37,7 @@ const ScaleUpRoadmap = () => {
       title: 'Phase 2 (Starting September)',
       description: 'Market expansion and production scaling',
       steps: [
-        'Launch berry sachets in Australia and New Zealand markets',
+        'Launch berry liquid and sachets in Australia and New Zealand markets',
         'Scale production capabilities for both liquids and sachets',
         'Expand berry applications to additional varieties'
       ],
@@ -62,6 +63,7 @@ const ScaleUpRoadmap = () => {
       steps: [
         'Expand to additional produce categories',
         'Introduce Super Water™ commercial applications',
+        'Introduce Super Food™ commercial applications',
         'Scale globally with strategic partnerships'
       ],
       color: 'bg-indigo-600',

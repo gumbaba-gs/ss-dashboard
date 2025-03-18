@@ -184,17 +184,22 @@ const MarketOpportunityDashboard = () => {
     </div>
   );
 
-  // Detailed insight card component with expandable content
+  // Detailed insight card component with expandable content - updated to handle JSX content
   const InsightCard = ({ id, title, content, isExpanded, onToggle, icon, delay = 0 }) => (
-    <div 
-      className={`bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-500 ${
+    <div
+      className={`bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-500 relative z-10 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={{ transitionDelay: `${delay}ms`, pointerEvents: 'auto' }}
     >
-      <div 
-        className="p-4 cursor-pointer flex justify-between items-center"
-        onClick={() => onToggle(id)}
+      <div
+        className="p-4 cursor-pointer flex justify-between items-center relative z-20"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          onToggle(id);
+        }}
+        style={{ pointerEvents: 'auto' }}
       >
         <div className="flex items-center">
           <span className="text-xl mr-2">{icon}</span>
@@ -210,19 +215,23 @@ const MarketOpportunityDashboard = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </div>
-      <div 
+      <div
         className={`px-4 pb-4 transition-all duration-300 ${
-          isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 invisible overflow-hidden'
+          isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0 invisible overflow-hidden'
         }`}
       >
-        <p className="text-gray-700">{content}</p>
+        {typeof content === 'string' ? (
+          <p className="text-gray-700">{content}</p>
+        ) : (
+          content
+        )}
       </div>
     </div>
   );
 
   return (
     <section id="market-opportunity" className="relative min-h-screen gradient-bg py-16">
-      <div className="container-padding relative z-10">
+      <div className="container-padding relative z-10" style={{ pointerEvents: 'auto' }}>
         <h2 className={`heading text-center ${isVisible ? 'fade-in' : 'opacity-0'}`}>
           Market Opportunity: Preservations
         </h2>
@@ -230,18 +239,26 @@ const MarketOpportunityDashboard = () => {
           Explore our revolutionary 5x shelf life extension solutions and their market-transforming potential across multiple categories.
         </p>
 
-        {/* Tab Navigation */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
+        {/* Tab Navigation - Enhanced for better interaction */}
+        <div className="flex flex-wrap justify-center gap-2 mb-8 relative z-20" style={{ pointerEvents: 'auto' }}>
           {tabOptions.map((tab, index) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-3 rounded-full flex items-center transition duration-300 ${
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setActiveTab(tab.id);
+              }}
+              className={`px-4 py-3 rounded-full flex items-center transition duration-300 relative z-20 ${
                 activeTab === tab.id
                   ? 'bg-blue-600 text-white shadow-md'
                   : 'bg-white text-blue-800 hover:bg-blue-50'
               } ${isVisible ? 'fade-in' : 'opacity-0'}`}
-              style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+              style={{
+                animationDelay: `${0.3 + index * 0.1}s`,
+                pointerEvents: 'auto'
+              }}
+              type="button"
             >
               <span className="mr-2">{tab.icon}</span>
               <span>{tab.label}</span>
@@ -249,9 +266,9 @@ const MarketOpportunityDashboard = () => {
           ))}
         </div>
 
-        {/* Dashboard Content */}
-        <div className="bg-white bg-opacity-90 rounded-xl shadow-lg overflow-hidden border border-blue-100 mb-8">
-          <div className="p-6 bg-gradient-to-r from-blue-50 to-white border-b border-blue-100">
+        {/* Dashboard Content with improved interaction */}
+        <div className="bg-white bg-opacity-90 rounded-xl shadow-lg overflow-hidden border border-blue-100 mb-8 relative z-10" style={{ pointerEvents: 'auto' }}>
+          <div className="p-6 bg-gradient-to-r from-blue-50 to-white border-b border-blue-100 relative z-10">
             <h3 className="subheading">{activeData.title}</h3>
             <p className="text-gray-600">{activeData.subtitle}</p>
           </div>
@@ -321,6 +338,72 @@ const MarketOpportunityDashboard = () => {
                     onToggle={toggleExpand}
                     icon="💲"
                     delay={400}
+                  />
+                  
+                  <InsightCard
+                    id="competitors"
+                    title="Competitive Landscape"
+                    content={
+                      <div className="space-y-4">
+                        <p>Our 5x shelf life extension technology provides significant advantages over existing market solutions:</p>
+                        <div className="overflow-x-auto">
+                          <table className="min-w-full divide-y divide-blue-200">
+                            <thead className="bg-blue-50">
+                              <tr>
+                                <th className="px-4 py-2 text-left text-xs font-medium text-blue-800 uppercase">Competitor</th>
+                                <th className="px-4 py-2 text-left text-xs font-medium text-blue-800 uppercase">Technology</th>
+                                <th className="px-4 py-2 text-left text-xs font-medium text-blue-800 uppercase">Shelf Life Extension</th>
+                                <th className="px-4 py-2 text-left text-xs font-medium text-blue-800 uppercase">Market Share</th>
+                                <th className="px-4 py-2 text-left text-xs font-medium text-blue-800 uppercase">Key Limitation</th>
+                              </tr>
+                            </thead>
+                            <tbody className="bg-white divide-y divide-blue-100">
+                            <tr>
+                                <td className="px-4 py-2 text-sm font-medium text-blue-900">Apeel Sciences</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">Edible coatings</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">1.8-2.2x</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">28%</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">Alters taste profile</td>
+                              </tr>
+                              <tr>
+                                <td className="px-4 py-2 text-sm font-medium text-blue-900">FreshTech Solutions</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">Modified atmosphere packaging</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">1.5-2x</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">22%</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">High implementation cost</td>
+                              </tr>
+                              
+                              <tr>
+                                <td className="px-4 py-2 text-sm font-medium text-blue-900">AgriLongevity</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">Cold chain optimization</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">1.3-1.7x</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">18%</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">High energy requirements</td>
+                              </tr>
+                              <tr>
+                                <td className="px-4 py-2 text-sm font-medium text-blue-900">BioExtend</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">Antimicrobial films</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">2.0-2.5x</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">15%</td>
+                                <td className="px-4 py-2 text-sm text-gray-700">Limited product compatibility</td>
+                              </tr>
+                              <tr className="bg-blue-50">
+                                <td className="px-4 py-2 text-sm font-bold text-blue-900">Spanex Sciences</td>
+                                <td className="px-4 py-2 text-sm font-semibold text-blue-700">Proprietary formulations</td>
+                                <td className="px-4 py-2 text-sm font-semibold text-green-700">5.0x</td>
+                                <td className="px-4 py-2 text-sm font-semibold text-blue-700">3.8% (growing)</td>
+                                <td className="px-4 py-2 text-sm font-semibold text-blue-700">New market entrant</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <p className="text-sm text-gray-700 mt-2">Our proprietary technology offers more than double the shelf life extension of the nearest competitor while maintaining product quality, taste, and nutritional value.</p>
+                      </div>
+                    }
+                    isExpanded={expandedCard === 'competitors'}
+                    onToggle={toggleExpand}
+                    icon="🏆"
+                    delay={500}
                   />
                 </div>
               </>

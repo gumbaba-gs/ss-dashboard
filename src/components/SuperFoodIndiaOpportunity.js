@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const SuperWaterIndiaOpportunity = () => {
+const SuperFoodIndiaOpportunity = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('overview');
   const [expandedSection, setExpandedSection] = useState('market');
@@ -21,75 +21,62 @@ const SuperWaterIndiaOpportunity = () => {
   // Market data for India
   const marketData = {
     overview: {
-      title: "Super Water™ India Opportunity",
-      subtitle: "A rapidly growing market for enhanced hydration solutions",
-      description: "With a population of 1.4 billion and growing health consciousness, India represents a significant market opportunity for our Super Water™ formulations.",
+      title: "Super Food™ India Opportunity",
+      subtitle: "A rapidly growing market for functional food solutions",
+      description: "With a population of 1.4 billion and increasing health awareness, India represents a significant market opportunity for our Super Food™ formulations.",
       stats: [
-        { label: "Market Size (2025)", value: "$9.2B", icon: "📊" },
-        { label: "Annual Growth", value: "16.8%", icon: "📈" },
-        { label: "Projected Revenue (2030)", value: "$85M+", icon: "💰" },
+        { label: "Market Size (2025)", value: "$12.5B", icon: "📊" },
+        { label: "Annual Growth", value: "18.3%", icon: "📈" },
+        { label: "Projected Revenue (2030)", value: "$95M+", icon: "💰" },
         { label: "Target Urban Centers", value: "15+", icon: "🏙️" }
       ]
     },
-    lifestyleWaters: {
-      title: "Lifestyle-Specific Waters",
+    disasterManagementFood: {
+      title: "Disaster Management Food",
       products: [
         {
-          name: "Traveler's Hydrate™",
-          description: "Enhanced hydration solution designed specifically for frequent travelers, combating jet lag and travel-related dehydration.",
+          name: "Protein Chocolate Surge™",
+          description: "A high-energy protein chocolate designed to keep a person energized for 2-3 days during emergencies.",
           benefits: [
-            "Accelerated rehydration during long flights",
+            "Sustained energy release for 2-3 days",
+            "Complete nutritional profile",
+            "Compact and portable format",
+            "Extended shelf life for emergency storage"
+          ],
+          marketSize: "$3.8B",
+          targetUsers: "Emergency response teams, disaster relief organizations, military, adventure enthusiasts",
+          projectedRevenue: "$42M annually by 2030"
+        }
+      ]
+    },
+    lifestyleFoods: {
+      title: "Lifestyle-Specific Foods",
+      products: [
+        {
+          name: "Traveler's Fuel™",
+          description: "Advanced nutritional bars designed specifically for frequent travelers, combating jet lag and travel-related fatigue.",
+          benefits: [
+            "Sustained energy during long journeys",
             "Reduced jet lag symptoms",
             "Improved focus and alertness during travel",
             "Enhanced immune support for travel-related stress"
           ],
-          marketSize: "$3.8B",
-          targetUsers: "Business travelers, tourists, aviation professionals",
-          projectedRevenue: "$28M annually by 2030"
-        },
-        {
-          name: "AlcoholDetox™",
-          description: "Specialized formulation that supports liver function and accelerates recovery after alcohol consumption.",
-          benefits: [
-            "Rapid rehydration after alcohol consumption",
-            "Supports natural detoxification processes",
-            "Replenishes essential nutrients",
-            "Reduces morning-after symptoms"
-          ],
-          marketSize: "$2.6B",
-          targetUsers: "Urban professionals, hospitality industry, entertainment districts",
-          projectedRevenue: "$22M annually by 2030"
-        }
-      ]
-    },
-    cognitiveWaters: {
-      title: "Mood & Cognitive Function Waters",
-      products: [
-        {
-          name: "Brain-Boost™",
-          description: "Advanced hydration with cognitive enhancement properties, supporting mental clarity, focus and memory.",
-          benefits: [
-            "Enhanced mental clarity and focus",
-            "Improved memory function",
-            "Sustained cognitive performance",
-            "Support for brain health"
-          ],
           marketSize: "$4.5B",
-          targetUsers: "Students, professionals, technology workers, seniors",
-          projectedRevenue: "$32M annually by 2030"
+          targetUsers: "Business travelers, tourists, aviation professionals, digital nomads",
+          projectedRevenue: "$38M annually by 2030"
         },
         {
-          name: "Stress Management™",
-          description: "Calming formulation that combines optimal hydration with stress-reduction properties.",
+          name: "StressBuster Bars™",
+          description: "Specialized nutritional bars that combine stress-reducing adaptogens with sustained energy release for high-pressure situations.",
           benefits: [
             "Reduced stress and anxiety",
-            "Improved sleep quality",
-            "Enhanced mood balance",
+            "Improved mental clarity under pressure",
+            "Sustained energy without crashes",
             "Support for overall mental wellbeing"
           ],
-          marketSize: "$2.9B",
-          targetUsers: "Corporate professionals, healthcare workers, urban residents",
-          projectedRevenue: "$18M annually by 2030"
+          marketSize: "$5.2B",
+          targetUsers: "Corporate professionals, healthcare workers, students during exams, high-stress occupation workers",
+          projectedRevenue: "$45M annually by 2030"
         }
       ]
     },
@@ -99,26 +86,91 @@ const SuperWaterIndiaOpportunity = () => {
         {
           name: "Urban Centers",
           description: "Focusing on India's 15 largest metropolitan areas with combined population exceeding 150 million",
-          percentage: 40,
-          growth: 18.5
+          percentage: 42,
+          growth: 19.2
         },
         {
           name: "Middle Class Consumers",
           description: "India's rapidly expanding middle class with growing disposable income and health awareness",
-          percentage: 35,
-          growth: 21.2
+          percentage: 38,
+          growth: 22.5
         },
         {
           name: "Health-Conscious Segment",
           description: "Growing population of fitness enthusiasts and health-focused consumers",
-          percentage: 15,
-          growth: 24.7
+          percentage: 12,
+          growth: 26.3
         },
         {
           name: "Corporate Partnerships",
-          description: "Strategic B2B opportunities with corporates, hotels, fitness centers and healthcare facilities",
+          description: "Strategic B2B opportunities with corporates, wellness centers and healthcare facilities",
+          percentage: 8,
+          growth: 16.8
+        }
+      ]
+    },
+    majorConsumers: {
+      title: "Major Consumer Profiles",
+      consumers: [
+        {
+          name: "Health-Conscious Professionals",
+          description: "Urban professionals aged 25-45 with high disposable income and active interest in preventive health",
+          percentage: 35,
+          characteristics: [
+            "Regular fitness regimen",
+            "High digital engagement",
+            "Willing to pay premium for quality",
+            "Research-driven purchasing decisions"
+          ],
+          growthPotential: "Very High"
+        },
+        {
+          name: "Wellness Enthusiasts",
+          description: "Dedicated health and wellness practitioners who actively seek advanced nutritional solutions",
+          percentage: 22,
+          characteristics: [
+            "Early adopters of health innovations",
+            "Active in wellness communities",
+            "Holistic health approach",
+            "Influencers within social circles"
+          ],
+          growthPotential: "High"
+        },
+        {
+          name: "Preventive Health Seekers",
+          description: "Individuals focused on disease prevention and longevity through nutrition",
+          percentage: 18,
+          characteristics: [
+            "Family health orientation",
+            "Concern about chronic conditions",
+            "Regular health monitoring",
+            "Consistent supplement usage"
+          ],
+          growthPotential: "Medium"
+        },
+        {
+          name: "Performance Optimizers",
+          description: "Athletes and fitness enthusiasts seeking performance enhancement through nutrition",
+          percentage: 15,
+          characteristics: [
+            "Competitive mindset",
+            "Results-driven approach",
+            "High brand loyalty when effective",
+            "Community-based purchasing influence"
+          ],
+          growthPotential: "High"
+        },
+        {
+          name: "Aging Population",
+          description: "Seniors and pre-seniors seeking to maintain health and vitality through advanced nutrition",
           percentage: 10,
-          growth: 15.3
+          characteristics: [
+            "Health maintenance focus",
+            "Increasing digital adoption",
+            "Higher disposable income",
+            "Brand loyal consumers"
+          ],
+          growthPotential: "Medium-High"
         }
       ]
     },
@@ -129,8 +181,8 @@ const SuperWaterIndiaOpportunity = () => {
           name: "Phase 1: Metropolitan Introduction (2025-2026)",
           steps: [
             "Launch in Delhi, Mumbai, Bangalore, Hyderabad and Chennai",
-            "Partner with premium retailers, fitness centers and corporate offices",
-            "Digital marketing campaign targeting urban professionals",
+            "Partner with premium health food retailers, fitness centers and wellness clinics",
+            "Digital marketing campaign targeting health-conscious urban professionals",
             "Establish local manufacturing and distribution partnerships"
           ]
         },
@@ -159,9 +211,10 @@ const SuperWaterIndiaOpportunity = () => {
   // Tab options
   const tabOptions = [
     { id: 'overview', label: 'Overview', icon: '📋' },
-    { id: 'lifestyleWaters', label: 'Lifestyle Waters', icon: '🧳' },
-    { id: 'cognitiveWaters', label: 'Cognitive Waters', icon: '🧠' },
+    { id: 'disasterManagementFood', label: 'Disaster Management', icon: '🆘' },
+    { id: 'lifestyleFoods', label: 'Lifestyle Foods', icon: '🧳' },
     { id: 'demographics', label: 'Demographics', icon: '👥' },
+    { id: 'majorConsumers', label: 'Major Consumers', icon: '🛒' },
     { id: 'launchStrategy', label: 'Launch Strategy', icon: '🚀' }
   ];
 
@@ -184,8 +237,8 @@ const SuperWaterIndiaOpportunity = () => {
         <span className="text-sm font-medium text-blue-700">{percentage}% | +{growth}% growth</span>
       </div>
       <div className="w-full bg-blue-100 rounded-full h-2.5">
-        <div 
-          className="bg-blue-600 h-2.5 rounded-full" 
+        <div
+          className="bg-blue-600 h-2.5 rounded-full"
           style={{ width: `${percentage}%` }}
         ></div>
       </div>
@@ -230,6 +283,42 @@ const SuperWaterIndiaOpportunity = () => {
         <div>
           <h4 className="font-semibold text-blue-900 mb-1">Target Users:</h4>
           <p className="text-sm text-gray-700">{product.targetUsers}</p>
+        </div>
+      </div>
+    </div>
+  );
+
+  // Consumer profile card component
+  const ConsumerProfileCard = ({ consumer }) => (
+    <div className="bg-white rounded-lg shadow-md overflow-hidden border border-blue-100 mb-6">
+      <div className="p-4 bg-gradient-to-r from-blue-50 to-white border-b border-blue-100">
+        <div className="flex justify-between items-center">
+          <h3 className="text-xl font-semibold text-blue-800">{consumer.name}</h3>
+          <div className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">
+            {consumer.percentage}% of market
+          </div>
+        </div>
+      </div>
+      <div className="p-4">
+        <p className="text-gray-700 mb-4">{consumer.description}</p>
+        
+        <div className="mb-4">
+          <h4 className="font-semibold text-blue-900 mb-2">Key Characteristics:</h4>
+          <ul className="space-y-1">
+            {consumer.characteristics.map((characteristic, idx) => (
+              <li key={idx} className="flex items-start">
+                <svg className="w-5 h-5 text-blue-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-sm">{characteristic}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        <div className="bg-green-50 p-3 rounded-lg inline-block">
+          <div className="text-sm font-semibold text-green-900">Growth Potential</div>
+          <div className="text-lg font-bold text-green-800">{consumer.growthPotential}</div>
         </div>
       </div>
     </div>
@@ -290,10 +379,10 @@ const SuperWaterIndiaOpportunity = () => {
       
       <div className="container-padding relative z-10" style={{ pointerEvents: 'auto' }}>
         <h2 className="heading text-center">
-          Super Water™ India Market Opportunity
+          Super Food™ India Market Opportunity
         </h2>
         <p className="paragraph text-center max-w-3xl mx-auto mb-8">
-          Expanding our enhanced hydration solutions to one of the world's largest and fastest-growing markets.
+          Expanding our functional food solutions to one of the world's largest and fastest-growing markets.
         </p>
 
         {/* Tab Navigation - Enhanced for better interaction */}
@@ -353,39 +442,32 @@ const SuperWaterIndiaOpportunity = () => {
                   <h3 className="text-xl font-semibold text-blue-800 mb-4">Market Opportunity Breakdown</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-semibold text-blue-900 mb-2">Lifestyle-Specific Waters</h4>
+                      <h4 className="font-semibold text-blue-900 mb-2">Disaster Management Food</h4>
                       <ul className="space-y-1">
                         <li className="flex items-start">
-                          <span className="text-xl mr-2">🧳</span>
+                          <span className="text-xl mr-2">🆘</span>
                           <div>
-                            <span className="font-medium">Traveler's Hydrate™</span>
-                            <p className="text-sm text-gray-600">Enhanced hydration for travelers</p>
-                          </div>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-xl mr-2">🍷</span>
-                          <div>
-                            <span className="font-medium">AlcoholDetox™</span>
-                            <p className="text-sm text-gray-600">Recovery after alcohol consumption</p>
+                            <span className="font-medium">Protein Chocolate Surge™</span>
+                            <p className="text-sm text-gray-600">2-3 days of energy in emergency situations</p>
                           </div>
                         </li>
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-blue-900 mb-2">Mood & Cognitive Function Waters</h4>
+                      <h4 className="font-semibold text-blue-900 mb-2">Lifestyle-Specific Foods</h4>
                       <ul className="space-y-1">
                         <li className="flex items-start">
-                          <span className="text-xl mr-2">🧠</span>
+                          <span className="text-xl mr-2">🧳</span>
                           <div>
-                            <span className="font-medium">Brain-Boost™</span>
-                            <p className="text-sm text-gray-600">Enhanced mental clarity and focus</p>
+                            <span className="font-medium">Traveler's Fuel™</span>
+                            <p className="text-sm text-gray-600">Combat jet lag and travel fatigue</p>
                           </div>
                         </li>
                         <li className="flex items-start">
-                          <span className="text-xl mr-2">🧘</span>
+                          <span className="text-xl mr-2">😌</span>
                           <div>
-                            <span className="font-medium">Stress Management™</span>
-                            <p className="text-sm text-gray-600">Calming formulation for stress reduction</p>
+                            <span className="font-medium">StressBuster Bars™</span>
+                            <p className="text-sm text-gray-600">Reduce stress in high-pressure situations</p>
                           </div>
                         </li>
                       </ul>
@@ -394,7 +476,7 @@ const SuperWaterIndiaOpportunity = () => {
                 </div>
                 
                 <ExpandableSection id="market" title="India Market Analysis">
-                  <p className="mb-4">India's enhanced water market presents a significant opportunity with its large population, expanding middle class, and growing health consciousness. The market is expected to grow at a compound annual growth rate of 16.8% through 2030.</p>
+                  <p className="mb-4">India's functional food market presents a significant opportunity with its large population, expanding middle class, and growing health consciousness. The market is expected to grow at a compound annual growth rate of 18.3% through 2030.</p>
                   
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                     <div className="bg-blue-50 p-3 rounded-lg text-center">
@@ -411,11 +493,11 @@ const SuperWaterIndiaOpportunity = () => {
                     </div>
                   </div>
                   
-                  <p>Our Super Water™ product line is uniquely positioned to capitalize on this market with formulations that align with growing consumer interest in functional beverages with specific health benefits.</p>
+                  <p>Our Super Food™ product line is uniquely positioned to capitalize on this market with formulations that align with growing consumer interest in functional foods with specific health benefits.</p>
                 </ExpandableSection>
                 
                 <ExpandableSection id="competitors" title="Competitive Landscape in India">
-                  <p className="mb-4">The enhanced water market in India is growing rapidly but still has relatively few established players with advanced functional formulations. Our Super Water™ products offer significant advantages over existing competitors:</p>
+                  <p className="mb-4">The functional food market in India is growing rapidly with several established players. Our Super Food™ products offer significant advantages over existing competitors:</p>
                   
                   <div className="overflow-x-auto mb-4">
                     <table className="min-w-full divide-y divide-blue-200">
@@ -430,57 +512,43 @@ const SuperWaterIndiaOpportunity = () => {
                       </thead>
                       <tbody className="bg-white divide-y divide-blue-100">
                         <tr>
-                          <td className="px-4 py-2 text-sm font-medium text-blue-900">AquaVitality</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Vitamin-enhanced water</td>
+                          <td className="px-4 py-2 text-sm font-medium text-blue-900">Patanjali</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">Ayurvedic supplements</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">22%</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">Traditional formulations</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">Limited scientific validation</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-2 text-sm font-medium text-blue-900">Himalaya</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">Herbal supplements</td>
                           <td className="px-4 py-2 text-sm text-gray-700">18%</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Wide distribution network</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Limited functional benefits</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">Established brand trust</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">Limited innovation</td>
                         </tr>
                         <tr>
-                          <td className="px-4 py-2 text-sm font-medium text-blue-900">Evocus</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Black alkaline water</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">14%</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Unique black color, alkaline pH</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Limited functional targeting</td>
+                          <td className="px-4 py-2 text-sm font-medium text-blue-900">Amway Nutrilite</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">Vitamin supplements</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">15%</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">Global research backing</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">High price point</td>
                         </tr>
                         <tr>
-                          <td className="px-4 py-2 text-sm font-medium text-blue-900">Black Water</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Mineral-rich black water</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">11%</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">High mineral content</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Taste concerns, limited availability</td>
-                        </tr>
-                        <tr>
-                          <td className="px-4 py-2 text-sm font-medium text-blue-900">Liquid Death</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Premium canned water</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">9%</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Strong branding, eco-friendly</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">No functional benefits</td>
-                        </tr>
-                        <tr>
-                          <td className="px-4 py-2 text-sm font-medium text-blue-900">HydroPlus</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Electrolyte water</td>
+                          <td className="px-4 py-2 text-sm font-medium text-blue-900">Herbalife</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">Nutritional supplements</td>
                           <td className="px-4 py-2 text-sm text-gray-700">12%</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Sports performance focus</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Single-purpose formulation</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">Strong distribution network</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">Limited targeting</td>
                         </tr>
                         <tr>
-                          <td className="px-4 py-2 text-sm font-medium text-blue-900">MindWell</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Nootropic water</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">8%</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Cognitive enhancement</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Premium pricing limits market</td>
-                        </tr>
-                        <tr>
-                          <td className="px-4 py-2 text-sm font-medium text-blue-900">AyurFlow</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Ayurvedic water</td>
+                          <td className="px-4 py-2 text-sm font-medium text-blue-900">Dabur</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">Traditional supplements</td>
                           <td className="px-4 py-2 text-sm text-gray-700">10%</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Traditional ingredients</td>
-                          <td className="px-4 py-2 text-sm text-gray-700">Inconsistent efficacy</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">Mass market presence</td>
+                          <td className="px-4 py-2 text-sm text-gray-700">Basic formulations</td>
                         </tr>
                         <tr className="bg-blue-50">
-                          <td className="px-4 py-2 text-sm font-bold text-blue-900">Super Water™</td>
-                          <td className="px-4 py-2 text-sm font-semibold text-blue-700">Advanced functional water</td>
+                          <td className="px-4 py-2 text-sm font-bold text-blue-900">Super Food™</td>
+                          <td className="px-4 py-2 text-sm font-semibold text-blue-700">Advanced functional foods</td>
                           <td className="px-4 py-2 text-sm font-semibold text-blue-700">2% (projected)</td>
                           <td className="px-4 py-2 text-sm font-semibold text-green-700">Targeted formulations</td>
                           <td className="px-4 py-2 text-sm font-semibold text-blue-700">New market entrant</td>
@@ -497,37 +565,25 @@ const SuperWaterIndiaOpportunity = () => {
                           <svg className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="text-sm">Scientifically formulated for specific use cases (vs. general wellness claims)</span>
+                          <span className="text-sm">Scientifically formulated for specific health needs (vs. general wellness claims)</span>
                         </li>
                         <li className="flex items-start">
                           <svg className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="text-sm">Superior efficacy with measurable benefits (unlike Evocus and Black Water)</span>
+                          <span className="text-sm">Clinically validated efficacy (unlike Patanjali's traditional approach)</span>
                         </li>
                         <li className="flex items-start">
                           <svg className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="text-sm">Premium positioning with strong brand identity (similar to Liquid Death but with functional benefits)</span>
+                          <span className="text-sm">Premium positioning with accessible pricing (more accessible than Amway)</span>
                         </li>
                         <li className="flex items-start">
                           <svg className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                           <span className="text-sm">Proprietary formulations with patent protection (unlike any competitor)</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-sm">Targeted solutions for specific lifestyle needs (more specialized than HydroPlus)</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-sm">Clinically validated formulations (unlike AyurFlow's traditional approach)</span>
                         </li>
                       </ul>
                     </div>
@@ -538,13 +594,13 @@ const SuperWaterIndiaOpportunity = () => {
                           <svg className="w-5 h-5 text-blue-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="text-sm">Partner with premium retailers and fitness centers</span>
+                          <span className="text-sm">Partner with premium retailers and wellness centers</span>
                         </li>
                         <li className="flex items-start">
                           <svg className="w-5 h-5 text-blue-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="text-sm">Targeted digital marketing to urban professionals</span>
+                          <span className="text-sm">Targeted digital marketing to health-conscious professionals</span>
                         </li>
                         <li className="flex items-start">
                           <svg className="w-5 h-5 text-blue-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -565,21 +621,21 @@ const SuperWaterIndiaOpportunity = () => {
               </div>
             )}
 
-            {activeTab === 'lifestyleWaters' && (
+            {activeTab === 'disasterManagementFood' && (
               <div>
-                <p className="paragraph mb-6">Our Lifestyle-Specific Waters address particular needs related to common lifestyle challenges, offering specialized hydration solutions for specific use cases.</p>
+                <p className="paragraph mb-6">Our Disaster Management Food products are designed to provide critical nutrition during emergency situations, with extended shelf life and complete nutritional profiles.</p>
                 
-                {marketData.lifestyleWaters.products.map((product) => (
+                {marketData.disasterManagementFood.products.map((product) => (
                   <ProductCard key={product.name} product={product} />
                 ))}
               </div>
             )}
 
-            {activeTab === 'cognitiveWaters' && (
+            {activeTab === 'lifestyleFoods' && (
               <div>
-                <p className="paragraph mb-6">Our Mood & Cognitive Function Waters provide enhanced hydration with additional benefits for mental clarity, focus, and emotional wellbeing.</p>
+                <p className="paragraph mb-6">Our Lifestyle-Specific Foods are tailored to address the unique nutritional needs of specific activities and situations, from travel to high-stress environments.</p>
                 
-                {marketData.cognitiveWaters.products.map((product) => (
+                {marketData.lifestyleFoods.products.map((product) => (
                   <ProductCard key={product.name} product={product} />
                 ))}
               </div>
@@ -587,11 +643,11 @@ const SuperWaterIndiaOpportunity = () => {
 
             {activeTab === 'demographics' && (
               <div>
-                <p className="paragraph mb-6">Super Water™ India strategy targets specific demographic segments with the highest potential for adoption and market growth.</p>
+                <p className="paragraph mb-6">Super Food™ India strategy targets specific demographic segments with the highest potential for adoption and market growth.</p>
                 
                 <div className="bg-blue-50 p-4 rounded-lg mb-6">
                   {marketData.demographics.segments.map((segment) => (
-                    <ProgressBar 
+                    <ProgressBar
                       key={segment.name}
                       label={segment.name}
                       percentage={segment.percentage}
@@ -651,6 +707,16 @@ const SuperWaterIndiaOpportunity = () => {
               </div>
             )}
 
+            {activeTab === 'majorConsumers' && (
+              <div>
+                <p className="paragraph mb-6">Understanding our major consumer profiles is critical for effective product development, marketing, and distribution strategies in the Indian market.</p>
+                
+                {marketData.majorConsumers.consumers.map((consumer) => (
+                  <ConsumerProfileCard key={consumer.name} consumer={consumer} />
+                ))}
+              </div>
+            )}
+
             {activeTab === 'launchStrategy' && (
               <div>
                 <p className="paragraph mb-6">Our three-phase strategy for entering and expanding in the Indian market is designed to build brand presence, establish distribution networks, and scale operations efficiently.</p>
@@ -688,17 +754,17 @@ const SuperWaterIndiaOpportunity = () => {
                       <div className="text-center">
                         <div className="w-4 h-4 rounded-full bg-blue-600 mb-1 mx-auto"></div>
                         <div className="text-sm font-medium">2025</div>
-                        <div className="text-xs">$8M</div>
+                        <div className="text-xs">$10M</div>
                       </div>
                       <div className="text-center">
                         <div className="w-4 h-4 rounded-full bg-blue-600 mb-1 mx-auto"></div>
                         <div className="text-sm font-medium">2027</div>
-                        <div className="text-xs">$24M</div>
+                        <div className="text-xs">$35M</div>
                       </div>
                       <div className="text-center">
                         <div className="w-4 h-4 rounded-full bg-blue-600 mb-1 mx-auto"></div>
                         <div className="text-sm font-medium">2030</div>
-                        <div className="text-xs">$85M+</div>
+                        <div className="text-xs">$95M+</div>
                       </div>
                     </div>
                   </div>
@@ -712,4 +778,4 @@ const SuperWaterIndiaOpportunity = () => {
   );
 };
 
-export default SuperWaterIndiaOpportunity;
+export default SuperFoodIndiaOpportunity;
