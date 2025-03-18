@@ -41,8 +41,8 @@ const InventorySection = () => {
           id: "berries-liquid-na",
           title: "Concentrated Liquid - North America",
           status: [
-            { label: "Organic", complete: true },
             { label: "Formulation Procured", complete: true },
+            { label: "Organic", complete: true },
             { label: "Lab Tested", complete: true },
             { label: "FDA Clearance", complete: true },
             { label: "Manufacturing Sample", complete: false, inProgress: true }
@@ -52,8 +52,8 @@ const InventorySection = () => {
           id: "berries-liquid-au",
           title: "Concentrated Liquid - Australia",
           status: [
-            { label: "Organic", complete: true },
             { label: "Formulation Procured", complete: true },
+            { label: "Organic", complete: true },
             { label: "Lab Tested", complete: true },
             { label: "FSANZ Clearance", complete: true },
             { label: "Manufacturing Sample", complete: false, inProgress: true }
@@ -63,8 +63,8 @@ const InventorySection = () => {
           id: "berries-sachets",
           title: "Sachets Formulation",
           status: [
-            { label: "Organic", complete: true },
             { label: "Formulation Procured", complete: true },
+            { label: "Organic", complete: true },
             { label: "Lab Tested", complete: true },
             { label: "FDA & FSANZ Clearance", complete: true }
           ]
@@ -84,8 +84,8 @@ const InventorySection = () => {
           id: "avocado-liquid-na",
           title: "Concentrated Liquid - North America",
           status: [
-            { label: "Organic", complete: true },
             { label: "Formulation Procured", complete: true },
+            { label: "Organic", complete: true },
             { label: "Lab Tested", complete: true },
             { label: "Clearance Process", complete: false, inProgress: true }
           ]
@@ -94,9 +94,9 @@ const InventorySection = () => {
           id: "avocado-liquid-au",
           title: "Concentrated Liquid - Australia",
           status: [
+            { label: "Formulation Procured", complete: true },
             { label: "Organic", complete: true },
             { label: "Lab Tested", complete: true },
-            { label: "FDA Clearance", complete: true },
             { label: "Clearance Process", complete: false, inProgress: true }
           ]
         },
@@ -104,9 +104,9 @@ const InventorySection = () => {
           id: "avocado-sachets",
           title: "Sachet Formulation",
           status: [
+            { label: "Formulation Procured", complete: true },
             { label: "Organic", complete: true },
             { label: "Lab Tested", complete: true },
-            { label: "FDA Clearance", complete: true },
             { label: "Clearance Process", complete: false, inProgress: true }
           ]
         }

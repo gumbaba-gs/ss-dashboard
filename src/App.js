@@ -3,6 +3,11 @@ import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import InventorySection from './components/InventorySection';
+import MarketOpportunityDashboard from './components/MarketOpportunityDashboard';
+import ProduceWashOpportunity from './components/ProduceWashOpportunity';
+import SuperWaterIndiaOpportunity from './components/SuperWaterIndiaOpportunity';
+import ProductValidation from './components/ProductValidation';
+import BerryMarketOpportunity from './components/BerryMarketOpportunity';
 import Section from './components/Section';
 import Footer from './components/Footer';
 
@@ -77,6 +82,11 @@ function App() {
         <Navbar />
         <HeroSection />
         <InventorySection />
+        <MarketOpportunityDashboard/>
+        <ProduceWashOpportunity/>
+        <SuperWaterIndiaOpportunity/>
+        <ProductValidation/>
+        {/* <BerryMarketOpportunity/> */}
         <Section
           id="about"
           title="About Spanex Sciences"
