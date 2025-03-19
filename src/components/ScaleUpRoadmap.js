@@ -51,7 +51,8 @@ const ScaleUpRoadmap = () => {
       steps: [
         'Establish production units in strategic locations',
         'Open R&D labs in Australia and America',
-        'Begin avocado and flower preservation commercial rollout'
+        'Begin avocado and flower preservation commercial rollout',
+        'Launch Advanced Wash Solutions in North American market markets'
       ],
       color: 'bg-purple-600',
       icon: '🔬'

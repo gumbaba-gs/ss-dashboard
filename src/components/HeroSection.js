@@ -73,13 +73,6 @@ const HeroSection = () => {
             >
               A pioneering scientific company with an extensive range of cutting-edge formulations across four innovative categories transforming multiple industries by enhancing <span className="font-semibold">preservation, sustainability, and human health</span>.
             </p>
-            
-            <button 
-              className={`px-6 py-3 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg transition-all duration-300 ${isVisible ? 'slide-in-top' : 'opacity-0'}`}
-              style={{ animationDelay: '1.2s' }}
-            >
-              Discover Our Solutions
-            </button>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

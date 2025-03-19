@@ -49,6 +49,37 @@ const SuperFoodIndiaOpportunity = () => {
         }
       ]
     },
+    ageDefyingFoods: {
+      title: "Age-Defying Food",
+      products: [
+        {
+          name: "Anti-ageing Super Water™",
+          description: "A refreshing hydration solution enriched with electrolytes and antioxidants to maintain cellular hydration and protect against oxidative stress, supporting a youthful appearance and energy.",
+          benefits: [
+            "Enhanced cellular hydration for skin elasticity",
+            "Antioxidant protection against free radicals",
+            "Improved circulation and nutrient delivery",
+            "Support for collagen production and skin health"
+          ],
+          marketSize: "$4.2B",
+          targetUsers: "Health-conscious adults 40+, wellness-focused professionals, beauty and anti-aging market",
+          projectedRevenue: "$38M annually by 2030"
+        },
+        {
+          name: "Age-Reversing Super Water™",
+          description: "A revitalizing hydration solution infused with advanced nutrients and bioactive compounds to promote cellular repair and rejuvenation, helping to reverse signs of aging and restore youthful vitality.",
+          benefits: [
+            "Promotes cellular repair for renewed energy and resilience",
+            "Bioactive compounds to reduce visible aging signs",
+            "Enhanced hydration for improved skin firmness and glow",
+            "Supports metabolic rejuvenation and overall vitality"
+          ],
+          marketSize: "$3.9B",
+          targetUsers: "Adults 45+ seeking proactive age-reversal solutions, urban wellness enthusiasts, premium beauty consumers",
+          projectedRevenue: "$35M annually by 2030"
+        }
+      ]
+    },
     lifestyleFoods: {
       title: "Lifestyle-Specific Foods",
       products: [
@@ -77,7 +108,7 @@ const SuperFoodIndiaOpportunity = () => {
           marketSize: "$5.2B",
           targetUsers: "Corporate professionals, healthcare workers, students during exams, high-stress occupation workers",
           projectedRevenue: "$45M annually by 2030"
-        }
+        },
       ]
     },
     demographics: {
@@ -212,6 +243,7 @@ const SuperFoodIndiaOpportunity = () => {
   const tabOptions = [
     { id: 'overview', label: 'Overview', icon: '📋' },
     { id: 'disasterManagementFood', label: 'Disaster Management', icon: '🆘' },
+    { id: 'ageDefyingFoods', label: 'Age Defying  Foods', icon: '🧳' },
     { id: 'lifestyleFoods', label: 'Lifestyle Foods', icon: '🧳' },
     { id: 'demographics', label: 'Demographics', icon: '👥' },
     { id: 'majorConsumers', label: 'Major Consumers', icon: '🛒' },
@@ -454,6 +486,25 @@ const SuperFoodIndiaOpportunity = () => {
                       </ul>
                     </div>
                     <div>
+                    <h4 className="font-semibold text-blue-900 mb-2">Age Defying Function Foods</h4>
+                      <ul className="space-y-1">
+                        <li className="flex items-start">
+                          <span className="text-xl mr-2">✨</span>
+                          <div>
+                            <span className="font-medium">Anti-ageing Super Foods™</span>
+                            <p className="text-sm text-gray-600">Support muscle maintenance and skin health</p>
+                          </div>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-xl mr-2"> 🔄</span>
+                          <div>
+                            <span className="font-medium">Age-Reversing Super Food™</span>
+                            <p className="text-sm text-gray-600">Cellular repair and rejuvenation technology</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
                       <h4 className="font-semibold text-blue-900 mb-2">Lifestyle-Specific Foods</h4>
                       <ul className="space-y-1">
                         <li className="flex items-start">
@@ -626,6 +677,16 @@ const SuperFoodIndiaOpportunity = () => {
                 <p className="paragraph mb-6">Our Disaster Management Food products are designed to provide critical nutrition during emergency situations, with extended shelf life and complete nutritional profiles.</p>
                 
                 {marketData.disasterManagementFood.products.map((product) => (
+                  <ProductCard key={product.name} product={product} />
+                ))}
+              </div>
+            )}
+
+            {activeTab === 'ageDefyingFoods' && (
+              <div>
+                <p className="paragraph mb-6">Our Lifestyle-Specific Foods are tailored to address the unique nutritional needs of specific activities and situations, from travel to high-stress environments.</p>
+                
+                {marketData.ageDefyingFoods.products.map((product) => (
                   <ProductCard key={product.name} product={product} />
                 ))}
               </div>

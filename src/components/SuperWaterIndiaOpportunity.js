@@ -25,7 +25,7 @@ const SuperWaterIndiaOpportunity = () => {
       subtitle: "A rapidly growing market for enhanced hydration solutions",
       description: "With a population of 1.4 billion and growing health consciousness, India represents a significant market opportunity for our Super Water™ formulations.",
       stats: [
-        { label: "Market Size (2025)", value: "$9.2B", icon: "📊" },
+        { label: "Market Size (2025)", value: "3.5B", icon: "📊" },
         { label: "Annual Growth", value: "16.8%", icon: "📈" },
         { label: "Projected Revenue (2030)", value: "$85M+", icon: "💰" },
         { label: "Target Urban Centers", value: "15+", icon: "🏙️" }
@@ -43,9 +43,9 @@ const SuperWaterIndiaOpportunity = () => {
             "Improved focus and alertness during travel",
             "Enhanced immune support for travel-related stress"
           ],
-          marketSize: "$3.8B",
+          marketSize: "$805M",
           targetUsers: "Business travelers, tourists, aviation professionals",
-          projectedRevenue: "$28M annually by 2030"
+          projectedRevenue: "$40M annually by 2030"
         },
         {
           name: "AlcoholDetox™",
@@ -56,9 +56,40 @@ const SuperWaterIndiaOpportunity = () => {
             "Replenishes essential nutrients",
             "Reduces morning-after symptoms"
           ],
-          marketSize: "$2.6B",
+          marketSize: "$602M",
           targetUsers: "Urban professionals, hospitality industry, entertainment districts",
-          projectedRevenue: "$22M annually by 2030"
+          projectedRevenue: "$30.5M annually by 2030"
+        }
+      ]
+    },
+    AgeDefyingWater: {
+      title: "Age-Defying Specific Waters",
+      products: [
+        {
+          name: "Anti-ageing Super Water™",
+          description: "A refreshing hydration solution enriched with electrolytes and antioxidants to maintain cellular hydration and protect against oxidative stress, supporting a youthful appearance and energy.",
+          benefits: [
+            "Enhanced cellular hydration for skin elasticity",
+            "Antioxidant protection against free radicals",
+            "Improved circulation and nutrient delivery",
+            "Support for collagen production and skin health"
+          ],
+          marketSize: "$800M",
+          targetUsers: "Health-conscious adults 40+, wellness-focused professionals, beauty and anti-aging market",
+          projectedRevenue: "$40M annually by 2030"
+        },
+        {
+          name: "Age-Reversing Super Water™ ",
+          description: "A revitalizing hydration solution infused with advanced nutrients and bioactive compounds to promote cellular repair and rejuvenation, helping to reverse signs of aging and restore youthful vitality.",
+          benefits: [
+            "Promotes cellular repair for renewed energy and resilience",
+            "Bioactive compounds to reduce visible aging signs",
+            "Enhanced hydration for improved skin firmness and glow",
+            "Supports metabolic rejuvenation and overall vitality"
+          ],
+          marketSize: "$600M",
+          targetUsers: "Adults 40+ in India seeking proactive age-reversal solutions, urban wellness enthusiasts, growing middle-class beauty consumers",
+          projectedRevenue: "$30M annually by 2030"
         }
       ]
     },
@@ -74,9 +105,9 @@ const SuperWaterIndiaOpportunity = () => {
             "Sustained cognitive performance",
             "Support for brain health"
           ],
-          marketSize: "$4.5B",
+          marketSize: "$710M",
           targetUsers: "Students, professionals, technology workers, seniors",
-          projectedRevenue: "$32M annually by 2030"
+          projectedRevenue: "$35M annually by 2030"
         },
         {
           name: "Stress Management™",
@@ -87,7 +118,7 @@ const SuperWaterIndiaOpportunity = () => {
             "Enhanced mood balance",
             "Support for overall mental wellbeing"
           ],
-          marketSize: "$2.9B",
+          marketSize: "$505M",
           targetUsers: "Corporate professionals, healthcare workers, urban residents",
           projectedRevenue: "$18M annually by 2030"
         }
@@ -160,6 +191,7 @@ const SuperWaterIndiaOpportunity = () => {
   const tabOptions = [
     { id: 'overview', label: 'Overview', icon: '📋' },
     { id: 'lifestyleWaters', label: 'Lifestyle Waters', icon: '🧳' },
+    { id: 'AgeDefyingWater', label: 'Age Defying Waters', icon: '✨' },
     { id: 'cognitiveWaters', label: 'Cognitive Waters', icon: '🧠' },
     { id: 'demographics', label: 'Demographics', icon: '👥' },
     { id: 'launchStrategy', label: 'Launch Strategy', icon: '🚀' }
@@ -372,6 +404,25 @@ const SuperWaterIndiaOpportunity = () => {
                       </ul>
                     </div>
                     <div>
+                    <h4 className="font-semibold text-blue-900 mb-2">Age Defying Function Waters</h4>
+                      <ul className="space-y-1">
+                        <li className="flex items-start">
+                          <span className="text-xl mr-2">✨</span>
+                          <div>
+                            <span className="font-medium">Anti-ageing Super Water™</span>
+                            <p className="text-sm text-gray-600">Cellular hydration for youthful appearance</p>
+                          </div>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-xl mr-2"> 🔄</span>
+                          <div>
+                            <span className="font-medium">Age-Reversing Super Water™</span>
+                            <p className="text-sm text-gray-600">Cellular repair and rejuvenation technology</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
                       <h4 className="font-semibold text-blue-900 mb-2">Mood & Cognitive Function Waters</h4>
                       <ul className="space-y-1">
                         <li className="flex items-start">
@@ -574,7 +625,14 @@ const SuperWaterIndiaOpportunity = () => {
                 ))}
               </div>
             )}
-
+            {activeTab === 'AgeDefyingWater' && (
+              <div>
+                <p className="paragraph mb-6">Our Age-Defying Specific Waters target the unique needs of aging gracefully, delivering specialized hydration solutions designed to support cellular vitality and a youthful appearance.</p>
+                {marketData.AgeDefyingWater.products.map((product) => (
+                  <ProductCard key={product.name} product={product} />
+                ))}
+              </div>
+            )}
             {activeTab === 'cognitiveWaters' && (
               <div>
                 <p className="paragraph mb-6">Our Mood & Cognitive Function Waters provide enhanced hydration with additional benefits for mental clarity, focus, and emotional wellbeing.</p>
