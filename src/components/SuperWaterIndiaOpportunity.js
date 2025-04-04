@@ -25,7 +25,7 @@ const SuperWaterIndiaOpportunity = () => {
       subtitle: "A rapidly growing market for enhanced hydration solutions",
       description: "With a population of 1.4 billion and growing health consciousness, India represents a significant market opportunity for our Super Water™ formulations.",
       stats: [
-        { label: "Market Size (2025)", value: "3.5B", icon: "📊" },
+        { label: "Market Size India (2025)", value: "3.5B", icon: "📊" },
         { label: "Annual Growth", value: "16.8%", icon: "📈" },
         { label: "Projected Revenue (2030)", value: "$85M+", icon: "💰" },
         { label: "Target Urban Centers", value: "15+", icon: "🏙️" }
@@ -124,6 +124,37 @@ const SuperWaterIndiaOpportunity = () => {
         }
       ]
     },
+    ageDefyingPetWaters: {
+      title: "Age-Defying Pet Waters",
+      products: [
+        {
+          name: "Anti-ageing Pet Water™",
+          description: "A refreshing hydration solution enriched with electrolytes and antioxidants to maintain cellular hydration in pets, supporting vitality and a youthful appearance as they age.",
+          benefits: [
+            "Enhanced cellular hydration for coat health and energy",
+            "Antioxidant protection against free radicals",
+            "Improved nutrient absorption and circulation",
+            "Supports joint hydration and overall wellness"
+          ],
+          marketSize: "$200M",
+          targetUsers: "Pet owners with aging pets (dogs and cats 7+ years), urban health-conscious pet parents, premium pet care consumers in India",
+          projectedRevenue: "$4M annually by 2030"
+        },
+        {
+          name: "Age-Reversing Pet Water™",
+          description: "A revitalizing hydration solution infused with advanced nutrients and bioactive compounds to promote cellular repair and rejuvenation in pets, helping to reverse signs of aging and restore youthful vigor.",
+          benefits: [
+            "Promotes cellular repair for renewed energy and resilience",
+            "Bioactive compounds to reduce visible aging signs in pets",
+            "Enhanced hydration for improved coat luster and mobility",
+            "Supports metabolic renewal and longevity"
+          ],
+          marketSize: "$250M",
+          targetUsers: "Pet owners with aging pets (dogs and cats 7+ years), urban wellness-focused pet parents, longevity enthusiasts, premium pet care consumers in India",
+          projectedRevenue: "$5M annually by 2030"
+        }
+      ]
+    },
     demographics: {
       title: "Target Demographics",
       segments: [
@@ -193,6 +224,7 @@ const SuperWaterIndiaOpportunity = () => {
     { id: 'lifestyleWaters', label: 'Lifestyle Waters', icon: '🧳' },
     { id: 'AgeDefyingWater', label: 'Age Defying Waters', icon: '✨' },
     { id: 'cognitiveWaters', label: 'Cognitive Waters', icon: '🧠' },
+    { id: 'ageDefyingPetWaters', label: 'Age Defying Pet Waters', icon: '🐾' },
     { id: 'demographics', label: 'Demographics', icon: '👥' },
     { id: 'launchStrategy', label: 'Launch Strategy', icon: '🚀' }
   ];
@@ -404,24 +436,24 @@ const SuperWaterIndiaOpportunity = () => {
                       </ul>
                     </div>
                     <div>
-                    <h4 className="font-semibold text-blue-900 mb-2">Age Defying Function Waters</h4>
-                      <ul className="space-y-1">
-                        <li className="flex items-start">
-                          <span className="text-xl mr-2">✨</span>
-                          <div>
-                            <span className="font-medium">Anti-ageing Super Water™</span>
-                            <p className="text-sm text-gray-600">Cellular hydration for youthful appearance</p>
-                          </div>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-xl mr-2"> 🔄</span>
-                          <div>
-                            <span className="font-medium">Age-Reversing Super Water™</span>
-                            <p className="text-sm text-gray-600">Cellular repair and rejuvenation technology</p>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
+                      <h4 className="font-semibold text-blue-900 mb-2">Age Defying Function Waters</h4>
+                        <ul className="space-y-1">
+                          <li className="flex items-start">
+                            <span className="text-xl mr-2">✨</span>
+                            <div>
+                              <span className="font-medium">Anti-ageing Super Water™</span>
+                              <p className="text-sm text-gray-600">Cellular hydration for youthful appearance</p>
+                            </div>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-xl mr-2"> 🔄</span>
+                            <div>
+                              <span className="font-medium">Age-Reversing Super Water™</span>
+                              <p className="text-sm text-gray-600">Cellular repair and rejuvenation technology</p>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
                     <div>
                       <h4 className="font-semibold text-blue-900 mb-2">Mood & Cognitive Function Waters</h4>
                       <ul className="space-y-1">
@@ -437,6 +469,25 @@ const SuperWaterIndiaOpportunity = () => {
                           <div>
                             <span className="font-medium">Stress Management™</span>
                             <p className="text-sm text-gray-600">Calming formulation for stress reduction</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-blue-900 mb-2">Age Defying Pet Waters</h4>
+                      <ul className="space-y-1">
+                        <li className="flex items-start">
+                          <span className="text-xl mr-2">🐾</span>
+                          <div>
+                            <span className="font-medium">Anti-ageing Pet Water™</span>
+                            <p className="text-sm text-gray-600">Cellular hydration for pet vitality and coat health</p>
+                          </div>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-xl mr-2">🔧</span>
+                          <div>
+                            <span className="font-medium">Age-Reversing Pet Water™</span>
+                            <p className="text-sm text-gray-600">Cellular repair and rejuvenation for pets</p>
                           </div>
                         </li>
                       </ul>
@@ -642,7 +693,14 @@ const SuperWaterIndiaOpportunity = () => {
                 ))}
               </div>
             )}
-
+            {activeTab === 'ageDefyingPetWaters' && (
+              <div>
+                <p className="paragraph mb-6">Our Age-Defying Pet Waters address the unique hydration needs of aging pets, providing specialized solutions to support cellular vitality and youthful vigor.</p>
+                {marketData.ageDefyingPetWaters.products.map((product) => (
+                  <ProductCard key={product.name} product={product} />
+                ))}
+              </div>
+            )}
             {activeTab === 'demographics' && (
               <div>
                 <p className="paragraph mb-6">Super Water™ India strategy targets specific demographic segments with the highest potential for adoption and market growth.</p>

@@ -118,7 +118,7 @@ const ProductValidation = () => {
             </thead>
             <tbody>
               <tr>
-                <td className="py-2 text-sm font-medium text-blue-900">FDA GRAS Status</td>
+                <td className="py-2 text-sm font-medium text-blue-900">FDA and FSANZ GRAS Status</td>
                 <td className="py-2 text-sm text-green-700">Approved</td>
                 <td className="py-2 text-sm">March 2024</td>
               </tr>

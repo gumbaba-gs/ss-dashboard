@@ -25,9 +25,9 @@ const SuperFoodIndiaOpportunity = () => {
       subtitle: "A rapidly growing market for functional food solutions",
       description: "With a population of 1.4 billion and increasing health awareness, India represents a significant market opportunity for our Super Food™ formulations.",
       stats: [
-        { label: "Market Size (2025)", value: "$12.5B", icon: "📊" },
+        { label: "Market Size (2025)", value: "$3.1B", icon: "📊" },
         { label: "Annual Growth", value: "18.3%", icon: "📈" },
-        { label: "Projected Revenue (2030)", value: "$95M+", icon: "💰" },
+        { label: "Projected Revenue (2030)", value: "$72M+", icon: "💰" },
         { label: "Target Urban Centers", value: "15+", icon: "🏙️" }
       ]
     },
@@ -43,9 +43,9 @@ const SuperFoodIndiaOpportunity = () => {
             "Compact and portable format",
             "Extended shelf life for emergency storage"
           ],
-          marketSize: "$3.8B",
+          marketSize: "$409M",
           targetUsers: "Emergency response teams, disaster relief organizations, military, adventure enthusiasts",
-          projectedRevenue: "$42M annually by 2030"
+          projectedRevenue: "$19M annually by 2030"
         }
       ]
     },
@@ -53,30 +53,30 @@ const SuperFoodIndiaOpportunity = () => {
       title: "Age-Defying Food",
       products: [
         {
-          name: "Anti-ageing Super Water™",
-          description: "A refreshing hydration solution enriched with electrolytes and antioxidants to maintain cellular hydration and protect against oxidative stress, supporting a youthful appearance and energy.",
+          name: "Anti-ageing Super Food™",
+          description: "A nutrient-dense superfood blend packed with antioxidants, vitamins, and natural compounds to combat oxidative stress, boost cellular vitality, and promote a youthful appearance and energy from within.",
           benefits: [
-            "Enhanced cellular hydration for skin elasticity",
-            "Antioxidant protection against free radicals",
-            "Improved circulation and nutrient delivery",
-            "Support for collagen production and skin health"
+            "Enhanced cellular nutrition for improved skin firmness and elasticity",
+            "Antioxidant-rich formula to neutralize free radicals and slow aging",
+            "Supports metabolism and energy for overall vitality",
+            "Promotes collagen synthesis and joint health"
           ],
-          marketSize: "$4.2B",
-          targetUsers: "Health-conscious adults 40+, wellness-focused professionals, beauty and anti-aging market",
-          projectedRevenue: "$38M annually by 2030"
+          marketSize: "$850M",
+          targetUsers: "Health-conscious adults 40+ in India, urban wellness-focused professionals, growing beauty and anti-aging market consumers",
+          projectedRevenue: "$15M annually by 2030"
         },
         {
-          name: "Age-Reversing Super Water™",
-          description: "A revitalizing hydration solution infused with advanced nutrients and bioactive compounds to promote cellular repair and rejuvenation, helping to reverse signs of aging and restore youthful vitality.",
+          name: "Age-Reversing Super Food™",
+          description: "A cutting-edge superfood formulation infused with bioactive nutrients, antioxidants, and rejuvenating compounds to repair cellular damage, reverse signs of aging, and restore youthful energy and resilience.",
           benefits: [
-            "Promotes cellular repair for renewed energy and resilience",
-            "Bioactive compounds to reduce visible aging signs",
-            "Enhanced hydration for improved skin firmness and glow",
-            "Supports metabolic rejuvenation and overall vitality"
+            "Promotes cellular repair to reverse visible aging signs",
+            "Rich in bioactive compounds for youthful skin and vitality",
+            "Enhances energy and metabolic renewal",
+            "Supports tissue regeneration and overall rejuvenation"
           ],
-          marketSize: "$3.9B",
+          marketSize: "$900M",
           targetUsers: "Adults 45+ seeking proactive age-reversal solutions, urban wellness enthusiasts, premium beauty consumers",
-          projectedRevenue: "$35M annually by 2030"
+          projectedRevenue: "$18M annually by 2030"
         }
       ]
     },
@@ -92,9 +92,9 @@ const SuperFoodIndiaOpportunity = () => {
             "Improved focus and alertness during travel",
             "Enhanced immune support for travel-related stress"
           ],
-          marketSize: "$4.5B",
+          marketSize: "$450M",
           targetUsers: "Business travelers, tourists, aviation professionals, digital nomads",
-          projectedRevenue: "$38M annually by 2030"
+          projectedRevenue: "$9M annually by 2030"
         },
         {
           name: "StressBuster Bars™",
@@ -105,10 +105,41 @@ const SuperFoodIndiaOpportunity = () => {
             "Sustained energy without crashes",
             "Support for overall mental wellbeing"
           ],
-          marketSize: "$5.2B",
+          marketSize: "$520M",
           targetUsers: "Corporate professionals, healthcare workers, students during exams, high-stress occupation workers",
-          projectedRevenue: "$45M annually by 2030"
+          projectedRevenue: "$11M annually by 2030"
         },
+      ]
+    },
+    ageDefyingPetFoods: {
+      title: "Age-Defying Pet Foods",
+      products: [
+        {
+          name: "Anti-ageing Pet Food",
+          description: "A premium pet food blend crafted with grass-fed proteins and antioxidant-rich superfoods to support cellular health, maintain vitality, and promote a youthful appearance in aging pets.",
+          benefits: [
+            "Enhanced cellular health for improved coat shine and mobility",
+            "Antioxidant protection to combat free radicals and aging",
+            "Supports joint flexibility and energy in older pets",
+            "Promotes digestive health and immune resilience"
+          ],
+          marketSize: "$300M",
+          targetUsers: "Pet owners with aging pets (dogs and cats 7+ years), urban health-conscious pet parents, premium pet care consumers in India",
+          projectedRevenue: "$6M annually by 2030"
+        },
+        {
+          name: "Age-Reversing Pet Food",
+          description: "An advanced pet food formula infused with bioactive superfoods and grass-fed nutrients to repair cellular damage, reverse signs of aging, and restore youthful vitality and strength in pets.",
+          benefits: [
+            "Promotes cellular repair to reverse age-related decline",
+            "Bioactive nutrients for vibrant coat and muscle tone",
+            "Boosts energy and metabolic renewal in aging pets",
+            "Supports cognitive function and overall rejuvenation"
+          ],
+          marketSize: "$350M",
+          targetUsers: "Pet owners with aging pets (dogs and cats 7+ years), urban wellness-focused pet parents, longevity enthusiasts, premium pet care consumers in India",
+          projectedRevenue: "$8M annually by 2030"
+        }
       ]
     },
     demographics: {
@@ -243,8 +274,9 @@ const SuperFoodIndiaOpportunity = () => {
   const tabOptions = [
     { id: 'overview', label: 'Overview', icon: '📋' },
     { id: 'disasterManagementFood', label: 'Disaster Management', icon: '🆘' },
-    { id: 'ageDefyingFoods', label: 'Age Defying  Foods', icon: '🧳' },
+    { id: 'ageDefyingFoods', label: 'Age Defying  Foods', icon: '✨' },
     { id: 'lifestyleFoods', label: 'Lifestyle Foods', icon: '🧳' },
+    { id: 'ageDefyingPetFoods', label: 'Age Defying Pet Foods', icon: '🐾' },
     { id: 'demographics', label: 'Demographics', icon: '👥' },
     { id: 'majorConsumers', label: 'Major Consumers', icon: '🛒' },
     { id: 'launchStrategy', label: 'Launch Strategy', icon: '🚀' }
@@ -523,6 +555,25 @@ const SuperFoodIndiaOpportunity = () => {
                         </li>
                       </ul>
                     </div>
+                    <div>
+                      <h4 className="font-semibold text-blue-900 mb-2">Age Defying Pet Foods</h4>
+                      <ul className="space-y-1">
+                        <li className="flex items-start">
+                          <span className="text-xl mr-2">🐾</span>
+                          <div>
+                            <span className="font-medium">Anti-ageing Pet Food™</span>
+                            <p className="text-sm text-gray-600">Supports coat shine and joint health in aging pets</p>
+                          </div>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-xl mr-2">🔧</span>
+                          <div>
+                            <span className="font-medium">Age-Reversing Pet Food™</span>
+                            <p className="text-sm text-gray-600">Cellular repair and vitality restoration for pets</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
                 
@@ -701,7 +752,15 @@ const SuperFoodIndiaOpportunity = () => {
                 ))}
               </div>
             )}
-
+            {activeTab === 'ageDefyingPetFoods' && (
+              <div>
+                <p className="paragraph mb-6">Our Age-Defying Pet Foods are designed to meet the unique nutritional needs of aging pets, supporting their vitality and well-being in daily life and beyond.</p>
+                
+                {marketData.ageDefyingPetFoods.products.map((product) => (
+                  <ProductCard key={product.name} product={product} />
+                ))}
+              </div>
+            )}
             {activeTab === 'demographics' && (
               <div>
                 <p className="paragraph mb-6">Super Food™ India strategy targets specific demographic segments with the highest potential for adoption and market growth.</p>

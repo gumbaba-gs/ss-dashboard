@@ -20,14 +20,28 @@ const ScaleUpRoadmap = () => {
   // Roadmap phases data
   const roadmapData = [
     {
+      id: 'prePhase',
+      title: 'Pre-Phase (Completed)',
+      description: 'Foundation establishment and initial milestones',
+      steps: [
+        'Procured 34 formulas for product development',
+        'Cleared compliance for 3 formulations',
+        'Formed Spanex Sciences (Lab) as Proprietary Limited Company (Pty Ltd) in Melbourne, Australia',
+        'Formed Spanex Shelf Life LLC in USA for regulatory and sales operations'
+      ],
+      color: 'bg-gray-600',
+      icon: '✅'
+    },
+    {
       id: 'phase1',
       title: 'Phase 1 (Next 3 Months)',
       description: 'Initial market entry and regulatory approvals',
       steps: [
-        'Open initial R&D labs in India',
+        'Form Spanex Shelf Life Private Limited in India for manufacturing and export operations',
+        'Open initial R&D labs in India (Vizag for Spanex Sciences R&D works)',
         'Establish initial production capabilities',
-        'Complete regulatory approvals for initial markets',
-        'Launch blueberry liquid formulations in North American market'
+        'Complete regulatory approvals for initial markets (India, USA)',
+        'Launch blueberry liquid formulations in North American market',
       ],
       color: 'bg-blue-600',
       icon: '🚀'
@@ -37,9 +51,11 @@ const ScaleUpRoadmap = () => {
       title: 'Phase 2 (Starting September)',
       description: 'Market expansion and production scaling',
       steps: [
-        'Launch berry liquid and sachets in Australia and New Zealand markets',
-        'Scale production capabilities for both liquids and sachets',
-        'Expand berry applications to additional varieties'
+        'Launch berry liquid and sachets in Australia and New Zealand markets via Spanex Shelf Life (Pty Ltd or branch in Australia)',
+        'Scale production capabilities for both liquids and sachets under Spanex Shelf Life in India',
+        'Expand berry applications to additional varieties',
+        'Establish Spanex Shelf Life Production Unit in India for manufacturing',
+        'Form Spanex Super Wash LLC in USA for regulatory prep'
       ],
       color: 'bg-green-600',
       icon: '📈'
@@ -49,10 +65,11 @@ const ScaleUpRoadmap = () => {
       title: 'Phase 3 (Q1 Next Year)',
       description: 'Infrastructure development and product diversification',
       steps: [
-        'Establish production units in strategic locations',
-        'Open R&D labs in Australia and America',
-        'Begin avocado and flower preservation commercial rollout',
-        'Launch Advanced Wash Solutions in North American market markets'
+        'Form Spanex Super Wash Private Limited in India',
+        'Establish production units in strategic locations (India for Spanex Super Wash Private Limited)',
+        'Open R&D labs in Australia (Spanex Sciences) and America (Spanex Shlef Life support)',
+        'Begin avocado and flower preservation commercial rollout via Spanex Shelf Life',
+        'Launch Advanced Wash Solutions in North American markets via Spanex Super Wash LLC'
       ],
       color: 'bg-purple-600',
       icon: '🔬'
@@ -62,10 +79,12 @@ const ScaleUpRoadmap = () => {
       title: 'Phase 4 (Year 2)',
       description: 'Global expansion and diversification',
       steps: [
-        'Expand to additional produce categories',
-        'Introduce Super Water™ commercial applications',
-        'Introduce Super Food™ commercial applications',
-        'Scale globally with strategic partnerships'
+        'Expand to additional produce categories under Spanex Shelf Life',
+        'Form Spanex Super Water Private Limited in India',
+        'Introduce Super Water™ commercial applications via Spanex Super Water',
+        'Form Spanex Super Food Private Limited in India',
+        'Introduce Super Food™ commercial applications via Spanex Super Foods',
+        'Scale globally with strategic partnerships across all subsidiaries'
       ],
       color: 'bg-indigo-600',
       icon: '🌐'

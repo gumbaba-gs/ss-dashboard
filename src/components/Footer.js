@@ -5,6 +5,22 @@ const Footer = () => {
   
   return (
     <footer className="bg-blue-900 text-white">
+      {/* Research Data Attribution Section */}
+      <div className="bg-blue-800 py-8">
+        <div className="container-padding">
+          <h3 className="text-xl font-bold mb-4">Research Data By:</h3>
+          <div className="flex items-center space-x-6">
+            <div>
+              <p className="text-lg">Statista</p>
+              <p className="text-sm text-blue-200 mt-1">The Statistics Portal for Market Data, Market Research and Market Studies</p>
+              <p className="text-sm text-blue-200 mt-1">Providing access to over 1,000,000 statistics and facts from over 80,000 topics</p>
+              <p className="text-sm text-blue-200 mt-1">Used by Fortune 500 companies, universities, and government agencies worldwide</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Main Footer Content */}
       <div className="container-padding">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -16,9 +32,9 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><a href="#home" className="hover:text-blue-300 transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-blue-300 transition-colors">About Us</a></li>
-              <li><a href="#products" className="hover:text-blue-300 transition-colors">Products</a></li>
-              <li><a href="#contact" className="hover:text-blue-300 transition-colors">Contact</a></li>
+              <li><a href="#inventory" className="hover:text-blue-300 transition-colors">Formulations</a></li>
+              <li><a href="#market-opportunity" className="hover:text-blue-300 transition-colors">Market Opportunity</a></li>
+              <li><a href="#business-model" className="hover:text-blue-300 transition-colors">Business Model</a></li>
             </ul>
           </div>
           
@@ -51,6 +67,7 @@ const Footer = () => {
         
         <div className="border-t border-blue-700 mt-8 pt-6 text-center">
           <p>&copy; {currentYear} Spanex Sciences. All rights reserved.</p>
+          <p className="text-sm text-blue-300 mt-2">All market data provided by Statista. Visit <a href="https://www.statista.com" className="underline hover:text-white" target="_blank" rel="noopener noreferrer">www.statista.com</a> for more information.</p>
         </div>
       </div>
     </footer>

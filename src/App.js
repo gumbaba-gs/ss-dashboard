@@ -11,6 +11,7 @@ import ProductValidation from './components/ProductValidation';
 import BerryMarketOpportunity from './components/BerryMarketOpportunity';
 import ScaleUpRoadmap from './components/ScaleUpRoadmap';
 import BusinessModelFinancialStrategy from './components/BusinessModelFinancialStrategy';
+import CompanyStructure from './components/CompanyStructure';
 import Section from './components/Section';
 import Footer from './components/Footer';
 
@@ -93,6 +94,7 @@ function App() {
         {/* <BerryMarketOpportunity/> */}
         <ScaleUpRoadmap/>
         <BusinessModelFinancialStrategy/>
+        <CompanyStructure/>
         <Footer />
       </div>
     </div>

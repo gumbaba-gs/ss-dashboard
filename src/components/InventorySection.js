@@ -11,14 +11,15 @@ const InventorySection = () => {
       e.preventDefault();
     }
     
-    console.log('Toggling item:', itemId);
+    console.log('Toggling item:', itemId, 'Current state:', expandedItems[itemId] ? 'expanded' : 'collapsed');
     
     setExpandedItems(prevState => {
       const newState = { ...prevState };
       newState[itemId] = !newState[itemId];
+      console.log('New state for item:', itemId, newState[itemId] ? 'expanded' : 'collapsed');
       return newState;
     });
-  }, []);
+  }, [expandedItems]);
 
   // Handle category change with useCallback
   const handleCategoryChange = useCallback((categoryId) => {
@@ -144,8 +145,8 @@ const InventorySection = () => {
           id: "vegetables-tomatoes",
           title: "Tomatoes",
           status: [
-            { label: "Berry formulation works on it", complete: true },
-            { label: "Ready for use", complete: true }
+            { label: "Formulation Procured", complete: true },
+            { label: "Lab Tested", complete: true }
           ]
         },
         {
@@ -222,6 +223,34 @@ const InventorySection = () => {
           status: [
             { label: "Formulation Procured", complete: true }
           ]
+        },
+        { 
+          id: "in-progress-aaf", 
+          title: "Anti-Ageing Dog Food Formula (Human-Grade)",
+          status: [
+            { label: "Formulation Procured", complete: true }
+          ]
+        },
+        { 
+          id: "in-progress-arf", 
+          title: "Age-Reversing Dog Food Formula (Human-Grade",
+          status: [
+            { label: "Formulation Procured", complete: true }
+          ]
+        },
+        { 
+          id: "in-progress-aaw", 
+          title: "Anti-Ageing Water Formula for Dogs",
+          status: [
+            { label: "Formulation Procured", complete: true }
+          ]
+        },
+        { 
+          id: "in-progress-arw", 
+          title: "Age-Reversing Water Formula for Dogs",
+          status: [
+            { label: "Formulation Procured", complete: true }
+          ]
         }
       ]
     },
@@ -262,23 +291,53 @@ const InventorySection = () => {
       ),
       items: [
         { 
-          id: "super-water-lifestyle", 
-          title: "Lifestyle-Specific Waters",
-          description: "Traveler's Hydrate™ and AlcoholDetox™",
+          id: "traveler's-hydrate™", 
+          title: "Traveler's Hydrate Water",
           status: [
             { label: "Formulation Procured", complete: true },
             { label: "Lab Tested", complete: false }
           ]
         },
         { 
-          id: "super-water-cognitive", 
-          title: "Mood & Cognitive Function Waters",
-          description: "Brain-Boost and Stress Management solutions",
+          id: "alcohol-detox", 
+          title: "Alcohol Detox Water",
           status: [
             { label: "Formulation Procured", complete: true },
             { label: "Lab Tested", complete: false }
           ]
-        }
+        },
+        { 
+          id: "brain-boost", 
+          title: "Brain-Boost Function Water",
+          status: [
+            { label: "Formulation Procured", complete: true },
+            { label: "Lab Tested", complete: false }
+          ]
+        },
+        { 
+          id: "stress-management", 
+          title: "Stress Management Function Water",
+          status: [
+            { label: "Formulation Procured", complete: true },
+            { label: "Lab Tested", complete: false }
+          ]
+        },
+        { 
+          id: "anti-ageing", 
+          title: "Anti Ageing Function Water",
+          status: [
+            { label: "Formulation Procured", complete: true },
+            { label: "Lab Tested", complete: false }
+          ]
+        },
+        { 
+          id: "age-reversing", 
+          title: "Age Reversing Function Water",
+          status: [
+            { label: "Formulation Procured", complete: true },
+            { label: "Lab Tested", complete: false }
+          ]
+        },
       ]
     },
     superFood: {
@@ -291,9 +350,16 @@ const InventorySection = () => {
       ),
       items: [
         { 
-          id: "super-food-lifestyle", 
-          title: "Lifestyle-Specific Foods",
-          description: "Traveler's Fuel™ and StressBuster Bars™",
+          id: "stressBuster-bar", 
+          title: "StressBuster Bar",
+          status: [
+            { label: "Formulation Procured", complete: true },
+            { label: "Lab Tested", complete: false }
+          ]
+        },
+        { 
+          id: "traveler's-fuel", 
+          title: "Traveler's Fuel Food",
           status: [
             { label: "Formulation Procured", complete: true },
             { label: "Lab Tested", complete: false }
@@ -305,7 +371,23 @@ const InventorySection = () => {
           description: "Protein Chocolate Surge™ - A high-energy protein chocolate designed to keep a person energized for 2-3 days during emergencies",
           status: [
             { label: "Formulation Procured", complete: true },
-            { label: "Lab Tested", complete: true }
+            { label: "Lab Tested", complete: false }
+          ]
+        },
+        { 
+          id: "anti-ageing", 
+          title: "Anti Ageing Food",
+          status: [
+            { label: "Formulation Procured", complete: true },
+            { label: "Lab Tested", complete: false }
+          ]
+        },
+        { 
+          id: "age-reversing", 
+          title: "Age Reversing Food",
+          status: [
+            { label: "Formulation Procured", complete: true },
+            { label: "Lab Tested", complete: false }
           ]
         }
       ]
@@ -478,26 +560,22 @@ const InventorySection = () => {
               return (
                 <div
                   key={item.id}
-                  className="p-6 hover:bg-gray-50 transition duration-150 relative z-10"
-                  style={{ pointerEvents: 'auto' }}
+                  className="p-6 hover:bg-gray-50 transition duration-150 relative z-10 cursor-pointer"
                 >
                   <div
                     className="flex justify-between items-center cursor-pointer relative z-10"
-                    onClick={(e) => {
-                      if (!e.target.closest('button')) {
-                        toggleExpand(item.id, e);
-                      }
-                    }}
-                    style={{ pointerEvents: 'auto' }}
+                    onClick={() => toggleExpand(item.id)}
                   >
                     <h4 className="font-semibold text-lg text-blue-800">{item.title}</h4>
                     <button
                       className="text-blue-500 hover:text-blue-700 p-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-full relative z-20"
-                      onClick={(e) => toggleExpand(item.id, e)}
+                      onClick={(e) => {
+                        e.stopPropagation(); // Stop event from bubbling up
+                        toggleExpand(item.id, e);
+                      }}
                       aria-expanded={isExpanded}
                       aria-controls={`${item.id}-content`}
                       type="button"
-                      style={{ pointerEvents: 'auto' }}
                     >
                       <svg
                         className={`w-5 h-5 transition-transform duration-200 ${isExpanded ? 'transform rotate-180' : ''}`}
@@ -519,8 +597,9 @@ const InventorySection = () => {
                   <div
                     id={`${item.id}-content`}
                     className={`mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 transition-all duration-300 ease-in-out ${
-                      isExpanded ? 'max-h-96 opacity-100 visible' : 'max-h-0 opacity-0 invisible overflow-hidden'
+                      isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
                     }`}
+                    aria-hidden={!isExpanded}
                   >
                     {item.status.map((status, idx) => (
                       <div key={idx} className="flex items-center gap-2">
