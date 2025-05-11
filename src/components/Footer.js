@@ -9,12 +9,18 @@ const Footer = () => {
       <div className="bg-blue-800 py-8">
         <div className="container-padding">
           <h3 className="text-xl font-bold mb-4">Research Data By:</h3>
-          <div className="flex items-center space-x-6">
+          <div className="flex flex-col md:flex-row md:items-start space-y-6 md:space-y-0 md:space-x-6">
             <div>
               <p className="text-lg">Statista</p>
               <p className="text-sm text-blue-200 mt-1">The Statistics Portal for Market Data, Market Research and Market Studies</p>
               <p className="text-sm text-blue-200 mt-1">Providing access to over 1,000,000 statistics and facts from over 80,000 topics</p>
               <p className="text-sm text-blue-200 mt-1">Used by Fortune 500 companies, universities, and government agencies worldwide</p>
+            </div>
+            <div>
+              <p className="text-lg">Nielsen</p>
+              <p className="text-sm text-blue-200 mt-1">Global Measurement and Data Analytics Company</p>
+              <p className="text-sm text-blue-200 mt-1">Providing insights on consumer behavior and market trends</p>
+              <p className="text-sm text-blue-200 mt-1">Trusted by leading brands and organizations for reliable market intelligence</p>
             </div>
           </div>
         </div>
@@ -22,13 +28,13 @@ const Footer = () => {
       
       {/* Main Footer Content */}
       <div className="container-padding">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="border-t border-blue-700 mt-8 pt-6 text-center">
           <div>
             <h3 className="text-xl font-bold mb-4">Spanex Sciences</h3>
             <p className="mb-4">Transforming industries with cutting-edge scientific solutions for preservation, sustainability, and human health.</p>
           </div>
           
-          <div>
+          {/* <div>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><a href="#home" className="hover:text-blue-300 transition-colors">Home</a></li>
@@ -36,9 +42,9 @@ const Footer = () => {
               <li><a href="#market-opportunity" className="hover:text-blue-300 transition-colors">Market Opportunity</a></li>
               <li><a href="#business-model" className="hover:text-blue-300 transition-colors">Business Model</a></li>
             </ul>
-          </div>
+          </div> */}
           
-          <div>
+          {/* <div>
             <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
             <div className="flex space-x-4">
               <a href="#" aria-label="Facebook" className="hover:text-blue-300 transition-colors">
@@ -62,12 +68,12 @@ const Footer = () => {
                 </svg>
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
         
         <div className="border-t border-blue-700 mt-8 pt-6 text-center">
           <p>&copy; {currentYear} Spanex Sciences. All rights reserved.</p>
-          <p className="text-sm text-blue-300 mt-2">All market data provided by Statista. Visit <a href="https://www.statista.com" className="underline hover:text-white" target="_blank" rel="noopener noreferrer">www.statista.com</a> for more information.</p>
+          <p className="text-sm text-blue-300 mt-2">Market data provided by Statista and Nielsen. Visit <a href="https://www.statista.com" className="underline hover:text-white" target="_blank" rel="noopener noreferrer">www.statista.com</a> and <a href="https://www.nielsen.com" className="underline hover:text-white" target="_blank" rel="noopener noreferrer">www.nielsen.com</a> for more information.</p>
         </div>
       </div>
     </footer>

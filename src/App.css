@@ -136,3 +136,64 @@ button {
   from { transform: translateY(-50px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+
+/* Add this to your global CSS file or component styles */
+
+/* Particle animation */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translateY(-10px) translateX(10px) rotate(5deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(10px) translateX(-10px) rotate(-5deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-5px) translateX(-5px) rotate(2deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(0) translateX(0) rotate(0);
+    opacity: 0.2;
+  }
+}
+
+.animate-float {
+  animation: float 15s ease-in-out infinite;
+}
+
+/* Ensure particles don't interfere with interactions */
+.particles-bg {
+  pointer-events: none;
+}
+
+/* Optional: Add these styles if you want to customize specific elements further */
+
+/* Enhanced hover effects for cards */
+.hover-card-effect {
+  transition: all 0.3s ease;
+}
+
+.hover-card-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
+}
+
+/* Pulse animation for important elements */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
